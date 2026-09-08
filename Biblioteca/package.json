@@ -5,11 +5,16 @@
   "description": "Practica 3 - La capa de dominio con genericos y patrones",
   "scripts": {
     "dev": "tsx src/main.ts",
+    "servidor": "esbuild publico/cliente.ts --outfile=dist/publico/cliente.js --format=esm && tsx src/http/servidor.ts",
     "typecheck": "tsc --noEmit",
     "build": "tsc",
-    "start": "node dist/main.js"
+    "start": "node dist/src/main.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
   },
   "devDependencies": {
+    "@types/express": "^5.0.3",
     "typescript": "^6.0.0",
     "@types/node": "^24.0.0",
     "tsx": "^4.0.0"
